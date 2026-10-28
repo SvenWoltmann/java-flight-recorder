@@ -28,14 +28,14 @@ class OrderService {
     while (Instant.now().isBefore(end)) {
       try {
         process(generator.next());
-      } catch (Exception e) {
-        e.printStackTrace();
+      } catch (InterruptedException _) {
+        Thread.currentThread().interrupt();
         return;
       }
     }
   }
 
-  void process(Order order) throws Exception {
+  void process(Order order) throws InterruptedException {
     OrderEvent event = new OrderEvent();
     event.orderId = order.id();
     event.begin();
@@ -55,7 +55,7 @@ class OrderService {
   private static int parseQuantity(String quantity) {
     try {
       return Integer.parseInt(quantity);
-    } catch (NumberFormatException e) {
+    } catch (NumberFormatException _) {
       return 1;
     }
   }

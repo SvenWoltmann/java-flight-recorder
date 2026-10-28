@@ -31,7 +31,7 @@ class ShippingService implements AutoCloseable {
   private static void handle(HttpExchange exchange) throws IOException {
     try {
       Thread.sleep(20);
-    } catch (InterruptedException e) {
+    } catch (InterruptedException _) {
       Thread.currentThread().interrupt();
     }
     byte[] body = "4.99".getBytes(StandardCharsets.US_ASCII);
