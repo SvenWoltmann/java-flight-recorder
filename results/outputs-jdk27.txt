@@ -1,0 +1,476 @@
+Outputs of the recording the article analyzes, recorded on JDK 27 (build 27+35) on an
+Apple M5 Pro with the default locale de_DE, so numbers use the German format.
+
+$ java -XX:StartFlightRecording:filename=orders.jfr,settings=profile \
+       -cp target/classes eu.happycoders.jfr.OrderProcessing 60
+Processed 8.588 orders
+
+$ jfr summary orders.jfr
+
+ Version: 2.1
+ Chunks: 1
+ Start: 2026-10-27 23:15:37 (UTC)
+ Duration: 60 s
+
+ Event Type                              Count  Size (bytes) 
+=============================================================
+ jdk.ObjectAllocationSample              17098        265113
+ jdk.GCPhaseParallel                     15307        394394
+ jdk.ThreadSleep                          8602        175674
+ eu.happycoders.Order                     8588        156953
+ jdk.SocketRead                           8588        372966
+ jdk.JavaMonitorEnter                     8557        200485
+ jdk.PromoteObjectOutsidePLAB             6790        109486
+ jdk.PromoteObjectInNewPLAB               4371         80071
+ jdk.NativeMethodSample                   2746         31379
+ jdk.JavaExceptionThrow                   1718         31934
+ jdk.ThreadPark                           1006         40515
+ jdk.SystemProcess                         985        100475
+ jdk.ExecutionSample                       983         11297
+ jdk.NativeLibrary                         947         80267
+ jdk.TenuringDistribution                  720          8085
+ jdk.ModuleExport                          507          5953
+ jdk.BooleanFlag                           467         13692
+ jdk.ActiveSetting                         384          9527
+ jdk.Checkpoint                            299        456540
+ jdk.GCReferenceStatistics                 192          1991
+ jdk.MetaspaceChunkFreeListSummary         192          3524
+ jdk.OldObjectSample                       191          6348
+ jdk.ModuleRequire                         156          1716
+ jdk.Deoptimization                        149          3501
+ jdk.GCPhasePauseLevel1                    144          5873
+ jdk.LongFlag                              136          4236
+ jdk.ThreadCPULoad                         119          1952
+ jdk.G1HeapSummary                          96          2372
+ jdk.GCHeapSummary                          96          3874
+ jdk.MetaspaceSummary                       96          4738
+ jdk.UnsignedLongFlag                       83          2675
+ jdk.InitialEnvironmentVariable             79          4490
+ jdk.ExecuteVMOperation                     61           992
+ jdk.ClassLoadingStatistics                 59           615
+ jdk.CompilerStatistics                     59          1712
+ jdk.ExceptionStatistics                    59           613
+ jdk.JavaThreadStatistics                   59           674
+ jdk.ResidentSetSize                        59           910
+ jdk.CPULoad                                58          1127
+ jdk.SafepointBegin                         52           698
+ jdk.EvacuationInformation                  48          1342
+ jdk.G1AdaptiveIHOP                         48          1982
+ jdk.G1BasicIHOP                            48          1166
+ jdk.G1EvacuationOldStatistics              48          1390
+ jdk.G1EvacuationYoungStatistics            48          1543
+ jdk.G1GarbageCollection                    48           599
+ jdk.G1MMU                                  48           641
+ jdk.GCCPUTime                              48           683
+ jdk.GCPhasePause                           48          1079
+ jdk.GarbageCollection                      48           995
+ jdk.YoungGarbageCollection                 48           599
+ jdk.InitialSecurityProperty                47          2313
+ jdk.UnsignedIntFlag                        45          1401
+ jdk.IntFlag                                42          1493
+ jdk.ThreadAllocationStatistics             42           425
+ jdk.JavaErrorThrow                         38           591
+ jdk.ThreadStart                            37           404
+ jdk.StringFlag                             33           967
+ jdk.ThreadEnd                              28           267
+ jdk.CompilerQueueUtilization               22           434
+ jdk.NetworkUtilization                     20           280
+ jdk.DoubleFlag                             16           629
+ jdk.InitialSystemProperty                  15           891
+ jdk.DirectBufferStatistics                 11           181
+ jdk.ClassLoaderStatistics                   6           156
+ jdk.CodeCacheStatistics                     6           174
+ jdk.GCHeapMemoryPoolUsage                   6           218
+ jdk.JavaMonitorWait                         6           163
+ jdk.StringTableStatistics                   5           182
+ jdk.SymbolTableStatistics                   5           182
+ jdk.ThreadContextSwitchRate                 4            46
+ jdk.Compilation                             2            57
+ jdk.GCConfiguration                         2            50
+ jdk.GCHeapMemoryUsage                       2            39
+ jdk.JavaMonitorStatistics                   2            16
+ jdk.PhysicalMemory                          2            36
+ jdk.SwapSpace                               2            34
+ jdk.ActiveRecording                         1            41
+ jdk.CPUInformation                          1           117
+ jdk.CPUTimeStampCounter                     1            18
+ jdk.CodeCacheConfiguration                  1            41
+ jdk.CompilerConfiguration                   1            10
+ jdk.GCHeapConfiguration                     1            24
+ jdk.GCSurvivorConfiguration                 1             9
+ jdk.GCTLABConfiguration                     1            11
+ jdk.JVMInformation                          1           299
+ jdk.Metadata                                1        113482
+ jdk.NativeLibraryLoad                       1            81
+ jdk.OSInformation                           1           140
+ jdk.Shutdown                                1            49
+ jdk.SocketWrite                             1            41
+ jdk.VirtualizationInformation               1            34
+ jdk.YoungGenerationConfiguration            1            16
+ jdk.AllocationRequiringGC                   0             0
+ jdk.BooleanFlagChanged                      0             0
+ jdk.CPUTimeSample                           0             0
+ jdk.CPUTimeSamplesLost                      0             0
+ jdk.ClassDefine                             0             0
+ jdk.ClassLoad                               0             0
+ jdk.ClassRedefinition                       0             0
+ jdk.ClassUnload                             0             0
+ jdk.CodeCacheFull                           0             0
+ jdk.CompilationFailure                      0             0
+ jdk.CompilerInlining                        0             0
+ jdk.CompilerPhase                           0             0
+ jdk.ConcurrentModeFailure                   0             0
+ jdk.ContainerCPUThrottling                  0             0
+ jdk.ContainerCPUUsage                       0             0
+ jdk.ContainerConfiguration                  0             0
+ jdk.ContainerIOUsage                        0             0
+ jdk.ContainerMemoryUsage                    0             0
+ jdk.ContinuationFreeze                      0             0
+ jdk.ContinuationFreezeFast                  0             0
+ jdk.ContinuationFreezeSlow                  0             0
+ jdk.ContinuationThaw                        0             0
+ jdk.ContinuationThawFast                    0             0
+ jdk.ContinuationThawSlow                    0             0
+ jdk.DataLoss                                0             0
+ jdk.DeprecatedInvocation                    0             0
+ jdk.Deserialization                         0             0
+ jdk.DoubleFlagChanged                       0             0
+ jdk.DumpReason                              0             0
+ jdk.EvacuationFailed                        0             0
+ jdk.FileForce                               0             0
+ jdk.FileRead                                0             0
+ jdk.FileWrite                               0             0
+ jdk.FinalFieldMutation                      0             0
+ jdk.FinalizerStatistics                     0             0
+ jdk.Flush                                   0             0
+ jdk.G1HeapRegionInformation                 0             0
+ jdk.G1HeapRegionTypeChange                  0             0
+ jdk.GCPhaseConcurrent                       0             0
+ jdk.GCPhaseConcurrentLevel1                 0             0
+ jdk.GCPhaseConcurrentLevel2                 0             0
+ jdk.GCPhasePauseLevel2                      0             0
+ jdk.GCPhasePauseLevel3                      0             0
+ jdk.GCPhasePauseLevel4                      0             0
+ jdk.HeapDump                                0             0
+ jdk.IntFlagChanged                          0             0
+ jdk.JITRestart                              0             0
+ jdk.JavaAgent                               0             0
+ jdk.JavaMonitorDeflate                      0             0
+ jdk.JavaMonitorInflate                      0             0
+ jdk.JavaMonitorNotify                       0             0
+ jdk.LongFlagChanged                         0             0
+ jdk.MetaspaceAllocationFailure              0             0
+ jdk.MetaspaceGCThreshold                    0             0
+ jdk.MetaspaceOOM                            0             0
+ jdk.MethodTiming                            0             0
+ jdk.MethodTrace                             0             0
+ jdk.NativeAgent                             0             0
+ jdk.NativeLibraryUnload                     0             0
+ jdk.NativeMemoryUsage                       0             0
+ jdk.NativeMemoryUsageTotal                  0             0
+ jdk.ObjectAllocationInNewTLAB               0             0
+ jdk.ObjectAllocationOutsideTLAB             0             0
+ jdk.ObjectCount                             0             0
+ jdk.ObjectCountAfterGC                      0             0
+ jdk.OldGarbageCollection                    0             0
+ jdk.PSHeapSummary                           0             0
+ jdk.ParallelOldGarbageCollection            0             0
+ jdk.ProcessStart                            0             0
+ jdk.PromotionFailed                         0             0
+ jdk.RedefineClasses                         0             0
+ jdk.ReservedStackActivation                 0             0
+ jdk.RetransformClasses                      0             0
+ jdk.SafepointEnd                            0             0
+ jdk.SafepointLatency                        0             0
+ jdk.SafepointStateSynchronization           0             0
+ jdk.SecurityPropertyModification            0             0
+ jdk.SecurityProviderService                 0             0
+ jdk.SerializationMisdeclaration             0             0
+ jdk.ShenandoahEvacuationInformation         0             0
+ jdk.ShenandoahHeapRegionInformation         0             0
+ jdk.ShenandoahHeapRegionStateChange         0             0
+ jdk.ShenandoahPromotionInformation          0             0
+ jdk.StringDeduplication                     0             0
+ jdk.StringFlagChanged                       0             0
+ jdk.SyncOnValueBasedClass                   0             0
+ jdk.SystemGC                                0             0
+ jdk.TLSHandshake                            0             0
+ jdk.ThreadDump                              0             0
+ jdk.UnsignedIntFlagChanged                  0             0
+ jdk.UnsignedLongFlagChanged                 0             0
+ jdk.VirtualThreadEnd                        0             0
+ jdk.VirtualThreadPinned                     0             0
+ jdk.VirtualThreadStart                      0             0
+ jdk.VirtualThreadSubmitFailed               0             0
+ jdk.X509Certificate                         0             0
+ jdk.X509Validation                          0             0
+ jdk.ZAllocationStall                        0             0
+ jdk.ZOldGarbageCollection                   0             0
+ jdk.ZPageAllocation                         0             0
+ jdk.ZRelocationSet                          0             0
+ jdk.ZRelocationSetGroup                     0             0
+ jdk.ZStatisticsCounter                      0             0
+ jdk.ZStatisticsSampler                      0             0
+ jdk.ZThreadPhase                            0             0
+ jdk.ZUncommit                               0             0
+ jdk.ZYoungGarbageCollection                 0             0
+
+$ jfr view --width 86 hot-methods orders.jfr
+
+                          Java Methods that Execute the Most
+
+Method                                                                Samples Percent
+--------------------------------------------------------------------- ------- -------
+java.util.ArrayList.indexOfRange(Object, int, int)                        406  41,30%
+eu.happycoders.jfr.OrderService.formatReceipt(...)                        151  15,36%
+eu.happycoders.jfr.OrderService.process(Order)                            128  13,02%
+java.util.ArrayList.grow(int)                                              17   1,73%
+java.lang.String$$StringConcat.0x00000700010c8000.prepend(...)             10   1,02%
+java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool$WorkQueue)         6   0,61%
+java.lang.StringBuilder.<init>()                                            6   0,61%
+java.util.concurrent.ConcurrentHashMap.putVal(...)                          6   0,61%
+java.lang.String.charAt(int)                                                5   0,51%
+java.lang.StringBuilder.append(String)                                      5   0,51%
+sun.net.httpserver.ServerImpl$Dispatcher.run()                              4   0,41%
+eu.happycoders.jfr.OrderService.processUntil(Instant, OrderGenerator)       4   0,41%
+sun.net.httpserver.Request.headers()                                        4   0,41%
+java.lang.String.length()                                                   4   0,41%
+java.lang.StringConcatHelper.newArray(int)                                  4   0,41%
+java.time.chrono.IsoChronology.isLeapYear(long)                             3   0,31%
+sun.net.httpserver.Request$WriteStream.write(byte[], int, int)              3   0,31%
+java.util.HashMap.putVal(int, Object, Object, boolean, boolean)             3   0,31%
+java.net.URI$Parser.parse(boolean)                                          3   0,31%
+java.net.URI$Parser.parseHostname(int, int, boolean)                        3   0,31%
+java.math.BigDecimal.toString()                                             3   0,31%
+com.sun.net.httpserver.Filter$Chain.doFilter(HttpExchange)                  3   0,31%
+sun.net.httpserver.ServerImpl$Exchange.run()                                3   0,31%
+java.util.Map.ofEntries(Map$Entry[])                                        3   0,31%
+java.lang.invoke.DirectMethodHandle.allocateInstance(Object)                3   0,31%
+
+$ jfr view --width 86 allocation-by-class orders.jfr
+
+                                 Allocation by Class
+
+Object Type                                                       Allocation Pressure
+----------------------------------------------------------------- -------------------
+byte[]                                                                         87,20%
+java.lang.String                                                                3,43%
+char[]                                                                          1,26%
+java.lang.String[]                                                              0,89%
+sun.net.www.protocol.http.HttpURLConnection                                     0,69%
+jdk.internal.event.ThreadSleepEvent                                             0,51%
+java.util.HashMap$Node[]                                                        0,49%
+java.util.HashMap$Node                                                          0,43%
+java.net.InetSocketAddress                                                      0,42%
+jdk.internal.vm.StackChunk                                                      0,38%
+java.net.URI                                                                    0,38%
+java.lang.Object[]                                                              0,36%
+java.lang.StringBuilder                                                         0,29%
+sun.net.www.MessageHeader                                                       0,29%
+java.util.LinkedList$ListItr                                                    0,27%
+java.util.LinkedList                                                            0,24%
+java.util.LinkedList$Node                                                       0,23%
+java.util.HashMap                                                               0,19%
+java.util.concurrent.ForkJoinTask$AdaptedRunnableAction                         0,16%
+java.util.ArrayList$Itr                                                         0,15%
+sun.net.httpserver.ExchangeImpl                                                 0,14%
+java.util.concurrent.locks.ReentrantLock$NonfairSync                            0,11%
+java.util.stream.ReferencePipeline$Head                                         0,07%
+java.net.URI$Parser                                                             0,06%
+java.util.HashMap$EntryIterator                                                 0,06%
+
+$ jfr view --width 86 allocation-by-site orders.jfr
+
+                                  Allocation by Site
+
+Method                                                            Allocation Pressure
+----------------------------------------------------------------- -------------------
+jdk.internal.misc.Unsafe.allocateUninitializedArray(Class, int)                77,53%
+java.io.InputStream.readNBytes(int)                                             2,98%
+java.util.Arrays.copyOfRange(byte[], int, int)                                  1,49%
+java.io.BufferedInputStream.getBufIfOpen(boolean)                               1,26%
+java.lang.String$$StringConcat.0x00000700010c8000.concat(...)                   1,26%
+java.util.Arrays.copyOf(byte[], int)                                            1,22%
+sun.net.www.protocol.http.HttpURLConnection.<init>(...)                         0,91%
+sun.net.www.MessageHeader.grow()                                                0,86%
+sun.net.httpserver.Request.<init>(...)                                          0,79%
+sun.net.www.protocol.http.Handler.openConnection(URL, Proxy)                    0,69%
+java.lang.StringLatin1.newString(byte[], int, int)                              0,65%
+java.lang.AbstractStringBuilder.<init>(int)                                     0,57%
+java.lang.Thread.beforeSleep(long)                                              0,51%
+java.lang.StringBuilder.toString()                                              0,50%
+java.util.HashMap.resize()                                                      0,49%
+java.util.HashMap.newNode(int, Object, Object, HashMap$Node)                    0,43%
+java.net.Socket.getRemoteSocketAddress()                                        0,42%
+java.lang.StringUTF16.compress(char[], int, int)                                0,40%
+sun.net.httpserver.LeftOverInputStream.skip(long)                               0,39%
+jdk.internal.vm.Continuation.doYield()                                          0,38%
+java.lang.String.copyValueOf(char[], int, int)                                  0,35%
+java.net.URLStreamHandler.toExternalForm(URL)                                   0,35%
+java.util.LinkedList.listIterator(int)                                          0,27%
+sun.net.httpserver.ServerImpl$Exchange.run()                                    0,23%
+sun.net.www.ParseUtil.createURI(...)                                            0,23%
+
+$ jfr view --width 86 latencies-by-type orders.jfr
+
+                                  Latencies by Type
+
+Event Type                                     Count Average    P 99 Longest    Total
+---------------------------------------------- ----- ------- ------- ------- --------
+Java Thread Sleep                              8.602 27,4 ms 22,6 ms  5,01 s 3 m 56 s
+Java Monitor Blocked                           8.557 26,6 ms 34,4 ms 52,6 ms 3 m 47 s
+Java Thread Park                               1.006  226 ms  328 ms 1 m 0 s 3 m 47 s
+Socket Read                                    8.588 21,3 ms 22,9 ms 50,2 ms  3 m 3 s
+Java Monitor Wait                                  6  10,0 s  10,0 s  10,0 s  1 m 0 s
+Socket Write                                       1 1,64 ms 1,64 ms 1,64 ms  1,64 ms
+
+$ jfr view --width 86 contention-by-site orders.jfr
+
+                                  Contention by Site
+
+StackTrace                                                      Count    Avg.    Max.
+--------------------------------------------------------------- ----- ------- -------
+eu.happycoders.jfr.InvoiceNumberGenerator.next()                8.557 26,6 ms 52,6 ms
+
+$ jfr view --width 86 socket-reads-by-host orders.jfr
+
+                                 Socket Reads by Host
+
+Host                                                                 Reads Total Read
+-------------------------------------------------------------------- ----- ----------
+localhost                                                            8.588   662,6 kB
+
+$ jfr view --width 86 gc-pauses orders.jfr
+
+GC Pauses
+---------
+
+Total Pause Time: 79,1 ms
+
+Number of Pauses: 48
+
+Minimum Pause Time: 0,698 ms
+
+Median Pause Time: 1,41 ms
+
+Average Pause Time: 1,65 ms
+
+P90 Pause Time: 2,18 ms
+
+P95 Pause Time: 4,47 ms
+
+P99 Pause Time: 5,83 ms
+
+P99.9% Pause Time: 5,83 ms
+
+Maximum Pause Time: 5,83 ms
+
+$ jfr view --width 86 gc orders.jfr
+
+                                 Garbage Collections
+
+Start    GC ID GC Name                     Heap Before GC Heap After GC Longest Pause
+-------- ----- --------------------------- -------------- ------------- -------------
+23:15:37     1 G1New                               9,8 MB        3,1 MB       1,73 ms
+23:15:37     2 G1New                              11,1 MB       10,9 MB       2,12 ms
+23:15:38     3 G1New                              42,9 MB       15,4 MB       5,83 ms
+23:15:38     4 G1New                              39,4 MB       15,7 MB       4,89 ms
+23:15:39     5 G1New                              39,7 MB       16,0 MB       3,97 ms
+23:15:40     6 G1New                              40,0 MB       16,6 MB       2,20 ms
+23:15:41     7 G1New                              48,6 MB       16,8 MB       1,11 ms
+23:15:43     8 G1New                              56,8 MB       17,5 MB       1,39 ms
+23:15:44     9 G1New                              57,5 MB       18,1 MB       1,24 ms
+23:15:46    10 G1New                              66,1 MB       19,1 MB       1,71 ms
+23:15:47    11 G1New                              67,1 MB       19,8 MB       1,46 ms
+23:15:49    12 G1New                              67,8 MB       20,2 MB       1,24 ms
+23:15:50    13 G1New                              60,2 MB       20,9 MB       1,35 ms
+23:15:51    14 G1New                              60,9 MB       21,7 MB       1,28 ms
+23:15:53    15 G1New                              61,7 MB       22,3 MB       1,29 ms
+23:15:54    16 G1New                              62,3 MB       22,5 MB       1,65 ms
+23:15:55    17 G1New                              62,5 MB       23,1 MB       1,42 ms
+23:15:57    18 G1New                              63,1 MB       23,6 MB       1,09 ms
+23:15:58    19 G1New                              63,6 MB       24,1 MB      0,813 ms
+23:15:59    20 G1New                              64,1 MB       24,7 MB       1,86 ms
+23:16:00    21 G1New                              64,7 MB       25,7 MB       1,39 ms
+23:16:02    22 G1New                              65,7 MB       26,2 MB       1,10 ms
+23:16:03    23 G1New                              66,2 MB       26,5 MB       1,15 ms
+23:16:04    24 G1New                              66,5 MB       27,2 MB       1,36 ms
+23:16:06    25 G1New                              67,2 MB       28,1 MB       1,46 ms
+23:16:07    26 G1New                              68,1 MB       28,4 MB       1,16 ms
+23:16:08    27 G1New                              68,4 MB       28,8 MB      0,993 ms
+23:16:10    28 G1New                              60,8 MB       29,3 MB       1,66 ms
+23:16:11    29 G1New                              61,3 MB       29,7 MB       1,70 ms
+23:16:12    30 G1New                              69,7 MB       30,6 MB       1,56 ms
+23:16:13    31 G1New                              70,6 MB       31,2 MB       1,45 ms
+23:16:15    32 G1New                              63,2 MB       31,6 MB      0,698 ms
+23:16:16    33 G1New                              63,6 MB       32,1 MB       1,26 ms
+23:16:17    34 G1New                              64,1 MB       32,8 MB       1,17 ms
+23:16:19    35 G1New                              64,8 MB       33,2 MB       1,25 ms
+23:16:20    36 G1New                              73,2 MB       34,0 MB       1,64 ms
+23:16:21    37 G1New                              74,0 MB       34,8 MB       1,65 ms
+23:16:23    38 G1New                              74,8 MB       35,0 MB       2,18 ms
+23:16:24    39 G1New                              75,0 MB       35,8 MB       1,46 ms
+23:16:25    40 G1New                              75,8 MB       36,5 MB       1,75 ms
+23:16:27    41 G1New                              76,5 MB       36,7 MB       1,10 ms
+23:16:28    42 G1New                              76,7 MB       37,5 MB       1,84 ms
+23:16:29    43 G1New                              77,5 MB       38,2 MB       1,38 ms
+23:16:31    44 G1New                              78,2 MB       38,6 MB       1,33 ms
+23:16:32    45 G1New                              78,6 MB       39,2 MB       1,30 ms
+23:16:33    46 G1New                              79,2 MB       40,1 MB       1,72 ms
+23:16:35    47 G1New                              80,1 MB       40,3 MB       1,25 ms
+23:16:36    48 G1New                              72,3 MB       40,9 MB       1,51 ms
+
+$ jfr view --width 86 exception-by-type orders.jfr
+
+                                  Exceptions by Type
+
+Class                                                                            Count
+----------------------------------------------------------- --------------------------
+java.lang.NumberFormatException                                                  1.661
+java.lang.NoSuchMethodError                                                         90
+java.lang.IncompatibleClassChangeError                                               4
+java.lang.NoSuchMethodException                                                      1
+
+$ jfr view --width 86 exception-by-site orders.jfr
+
+                                  Exceptions by Site
+
+Method                                                                          Count
+------------------------------------------------------------------------------- -----
+java.lang.NumberFormatException.forInputString(String, int)                     1.661
+java.lang.invoke.MethodHandleNatives.resolve(MemberName, Class, int, boolean)      94
+java.lang.Class.getMethod(String, Class[])                                          1
+
+With -XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints (orders-dns.jfr):
+
+$ jfr view --width 86 hot-methods orders-dns.jfr
+
+                          Java Methods that Execute the Most
+
+Method                                                                Samples Percent
+--------------------------------------------------------------------- ------- -------
+java.lang.String.equals(Object)                                           300  32,93%
+eu.happycoders.jfr.OrderService.formatReceipt(...)                        132  14,49%
+java.util.ArrayList.indexOfRange(Object, int, int)                        126  13,83%
+eu.happycoders.jfr.OrderService.process(Order)                             53   5,82%
+java.util.Random.next(int)                                                 10   1,10%
+java.lang.String.getBytes(byte[], int, byte)                               10   1,10%
+java.lang.String.coder()                                                   10   1,10%
+jdk.internal.misc.Unsafe.allocateUninitializedArray(Class, int)             9   0,99%
+eu.happycoders.jfr.OrderService.processUntil(Instant, OrderGenerator)       6   0,66%
+java.util.Arrays.copyOf(byte[], int)                                        5   0,55%
+java.lang.String$$StringConcat.0x00000300010c8000.prepend(...)              5   0,55%
+java.lang.String.length()                                                   5   0,55%
+java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool$WorkQueue)         4   0,44%
+java.util.ArrayList.add(Object, Object[], int)                              4   0,44%
+eu.happycoders.jfr.OrderGenerator.next()                                    4   0,44%
+java.util.Map.forEach(BiConsumer)                                           4   0,44%
+java.lang.Character.digit(int, int)                                         3   0,33%
+java.util.ImmutableCollections$ListN.get(int)                               3   0,33%
+java.time.format.DateTimeFormatterBuilder$CompositePrinterParser.f...       3   0,33%
+jdk.jfr.internal.JVM.getStackTraceId(int, long)                             3   0,33%
+java.util.concurrent.ConcurrentHashMap.get(Object)                          3   0,33%
+java.lang.StringLatin1.indexOf(byte[], int, int, int)                       3   0,33%
+java.time.ZonedDateTime.getLong(TemporalField)                              2   0,22%
+java.util.concurrent.ForkJoinPool.awaitWork(...)                            2   0,22%
+java.lang.String$$StringConcat.0x000003000111c000.length(...)               2   0,22%
