@@ -5,7 +5,7 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=SvenWoltmann_java-flight-recorder&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=SvenWoltmann_java-flight-recorder)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=SvenWoltmann_java-flight-recorder&metric=security_rating)](https://sonarcloud.io/dashboard?id=SvenWoltmann_java-flight-recorder)
 
-The example program of the HappyCoders.eu article "Java Flight Recorder (JFR)" (not yet published; [German](https://www.happycoders.eu/de/java/java-flight-recorder/), [English](https://www.happycoders.eu/java/java-flight-recorder/)).
+The example program of the HappyCoders.eu article "Java Flight Recorder (JFR)" ([English](https://www.happycoders.eu/java/java-flight-recorder/), [German](https://www.happycoders.eu/de/java/java-flight-recorder/)).
 
 Eight worker threads process randomly generated orders for a given number of seconds. A few spots in the code are written clumsily on purpose, the way they turn up in grown code – the article records the program with the Java Flight Recorder and finds each of them with `jfr view` and `jfr print`.
 
